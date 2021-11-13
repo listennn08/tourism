@@ -97,11 +97,11 @@ const getStatus = (status?: number) => {
       </div>
     </div>
   </section>
-  <section class="pb-20">
-    <p class="text-primary mb-3 text-right">
+  <section class="mt-45 pb-20">
+    <p class="text-primary mb-3 text-right px-2 md:px-0">
       每隔 15 秒更新一次
     </p>
-    <div class="bg-white py-13 px-14">
+    <div class="bg-white pt-4 md:py-13 px-2 md:px-14 min-h-screen">
       <div v-if="selectedRoute.TaiwanTripName">
         <ul class="time-list">
           <li
@@ -136,7 +136,12 @@ const getStatus = (status?: number) => {
 </template>
 <style scoped lang="postcss">
 .header {
-  @apply bg-white mb-15 relative z-3;
+  @apply
+    fixed md:relative inset-x-0 top-36
+    bg-white
+    mb-15
+    z-3
+  ;
 }
 .header-container {
   @apply
@@ -171,6 +176,6 @@ const getStatus = (status?: number) => {
 }
 
 .time-list {
-  @apply h-440 ml-20 flex flex-col flex-wrap content-center;
+  @apply md:h-440 md:ml-10 lg:ml-20 flex flex-col md:flex-wrap content-center w-full;
 }
 </style>
