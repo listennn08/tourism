@@ -101,6 +101,7 @@ const setText = (option: { [key: string]: any } | string) => {
     hover:bg-primary
     hover:text-white
     transform transition-colors
+    cursor-pointer
   ;
 }
 

@@ -3,6 +3,7 @@ import type { City, IActivityTourismInfo, IRestaurantTourismInfo, IScenicSpotTou
 import type { Ref } from 'vue'
 import VNoData from '@/components/VNoData.vue'
 
+const fetchData = inject<() => void>('fetchData')!
 const displayScenicSpot = inject<IScenicSpotTourismInfo[]>('displayScenicSpot')
 const displayActivity = inject<IActivityTourismInfo[]>('displayActivity')
 const displayRestaurant = inject<IRestaurantTourismInfo[]>('displayRestaurant')
@@ -46,6 +47,8 @@ onBeforeUnmount(() => {
     CountyID: '',
   })
 })
+
+fetchData()
 </script>
 <template>
   <VHeader :typeOptions="typeOptions" />

@@ -15,6 +15,7 @@ const setSelectedType = inject<(v: IType) => void>('setSelectedType')!
 const selectedCity = inject<City>('selectedCity')!
 const setSelectedCity = inject<(v: City) => void>('setSelectedCity')!
 const searchKeyword = inject<string>('searchKeyword')!
+const refetch = inject<() => void>('refetch')!
 
 const typeOptions = [
   {
@@ -50,6 +51,8 @@ onBeforeUnmount(() => {
   })
 })
 
+refetch()
+
 </script>
 <template>
   <VHeader :typeOptions="typeOptions" />
@@ -57,10 +60,6 @@ onBeforeUnmount(() => {
     <VLoading v-if="isLoading"/>
     <template v-else>
       <template v-if="!selectedType.value && !selectedCity?.City && !searchKeyword">
-        <SmallCardGroup title="熱門餐飲" :data="displayRestaurant" type="restaurant" />
-        <SmallCardGroup title="推薦住宿" :data="displayHotel" type="hotel"/>
-      </template>
-      <template v-else-if="selectedType.value === '' && !selectedCity.City">
         <SmallCardGroup title="熱門餐飲" :data="displayRestaurant" type="restaurant" />
         <SmallCardGroup title="推薦住宿" :data="displayHotel" type="hotel"/>
       </template>

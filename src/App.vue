@@ -32,6 +32,7 @@ const {
   reset,
   curPage,
   showNextPage,
+  refetch,
 } = useHome()
 
 const {
@@ -45,8 +46,7 @@ const searchOpen = ref(false)
 const openSearch = () => searchOpen.value = true
 const closeSearch = () => searchOpen.value = false
 
-fetchData()
-
+provide('fetchData', fetchData)
 provide('searchOpen', searchOpen)
 provide('openSearch', openSearch)
 provide('closeSearch', closeSearch)
@@ -76,6 +76,7 @@ provide('setSearchKeyword', setSearchKeyword)
 provide('searchByKeyword', searchByKeyword)
 provide('searchHistory', searchHistory)
 provide('clearSearchHistory', clearSearchHistory)
+provide('refetch', refetch)
 
 provide('curPage', curPage)
 provide('showNextPage', showNextPage)

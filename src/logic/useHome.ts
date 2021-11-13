@@ -375,6 +375,7 @@ export function useHome() {
     searchHistory,
     clearSearchHistory,
     reset,
+    refetch,
     curPage,
     showNextPage,
   }
