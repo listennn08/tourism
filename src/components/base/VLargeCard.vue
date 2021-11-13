@@ -58,7 +58,7 @@ const openDetail = (id: string) => {
 </template>
 <style scoped lang="postcss">
 .large-card {
-  @apply border bg-white relative mx-2.5 mb-4 md:mb-12;
+  @apply border relative mx-2.5 mb-4 md:mb-12;
 }
 
 .card-content {
