@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+@layer components {
+  .btn {
+    @apply rounded py-1.5 px-6;
+  }
+
+  .btn-primary.outline {
+    @apply border border-primary text-primary;
+  }
+
+  .scroll-hidden::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  .custom-shadow {
+    @apply relative;
+
+    &::before, &::after {
+      @apply
+        content-['']
+        absolute
+        filter blur-sm bg-gray-500 opacity-30
+        -bottom-2.5 transform
+        w-1/2 h-12.5
+        -z-1
+      ;
+    }
+
+    &::before {
+      @apply left-0 -skew-y-4;
+    }
+
+    &::after{
+      @apply right-0 skew-y-4;
+    }
+  }
+
+  .pagination {
+    @apply
+      w-full
+      h-8
+      flex items-start justify-center
+    ;
+  
+    &-item {
+      @apply
+        h-full
+        mx-1.5
+        text-primary
+        border-1 border-primary
+        rounded
+        cursor-pointer
+      ;
+
+      &.active {
+        @apply 
+          bg-primary
+          text-white;
+      }
+
+      & a {
+        @apply py-1 px-3 block;
+      }
+    }
+
+    &-next {
+      @apply
+        h-full
+        text-primary
+        border-1 border-primary
+        rounded
+      ;
+
+      & a {
+        @apply px-0.75 flex items-center h-full;
+      }
+    }
+  }
+}
+
+body {
+  @apply overflow-hidden;
+}
+body.modalOpen {
+  @apply h-screen bg-gray-light;
+}
+
+.main {
+  @apply
+    pt-34 md:pt-18
+    relative
+    bg-warm-gray-200
+    overflow-y-scroll
+    h-screen
+  ;
+}
